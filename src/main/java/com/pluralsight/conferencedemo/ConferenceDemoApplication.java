@@ -16,8 +16,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 public class ConferenceDemoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ConferenceDemoApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ConferenceDemoApplication.class, args);
+	}
 
 }
