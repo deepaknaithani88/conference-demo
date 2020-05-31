@@ -17,6 +17,7 @@ public class Session {
 	private String session_name;
 	private String session_description;
 	private Integer session_length;
+	// We can also define variables name in java naming convention and use annotation to map these variables with db fields
 	// @Id
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name = "session_id")
