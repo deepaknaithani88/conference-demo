@@ -1,9 +1,16 @@
 package com.pluralsight.conferencedemo.models;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.Type;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 @Entity(name = "speakers")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Speaker {
 
 	@Id
@@ -15,12 +22,15 @@ public class Speaker {
 	private String company;
 	private String speaker_bio;
 
-	// private byte[] speaker_photo;
+	@Lob
+	@Type(type = "org.hibernate.type.BinaryType")
+	private byte[] speaker_photo;
 
 	// @JoinTable(name = "session_speakers", joinColumns = @JoinColumn(name =
 	// "speaker_id"),
 	// inverseJoinColumns = @JoinColumn(name = "session_id"))
 	@ManyToMany(mappedBy = "speakers")
+	@JsonIgnore
 	private List<Session> sessions;
 
 	public Speaker() {
@@ -74,13 +84,13 @@ public class Speaker {
 		this.speaker_bio = speaker_bio;
 	}
 
-	// public byte[] getSpeaker_photo() {
-	// return speaker_photo;
-	// }
+	public byte[] getSpeaker_photo() {
+		return speaker_photo;
+	}
 
-	// public void setSpeaker_photo(byte[] speaker_photo) {
-	// this.speaker_photo = speaker_photo;
-	// }
+	public void setSpeaker_photo(byte[] speaker_photo) {
+		this.speaker_photo = speaker_photo;
+	}
 
 	public List<Session> getSessions() {
 		return sessions;

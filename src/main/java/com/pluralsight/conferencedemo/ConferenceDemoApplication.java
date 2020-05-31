@@ -17,6 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class ConferenceDemoApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Starting Spring Boot application...");
 		SpringApplication.run(ConferenceDemoApplication.class, args);
 	}
 
