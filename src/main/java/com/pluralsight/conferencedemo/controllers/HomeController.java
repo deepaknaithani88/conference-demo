@@ -10,14 +10,15 @@ import java.util.Map;
 
 @RestController
 public class HomeController {
-    @Value("${app.version}")
-    private String appVersion;
+	@Value("${app.version}")
+	private String appVersion;
 
-    @GetMapping
-    @RequestMapping("/")
-    public Map<String, String> getStatus(){
-        Map<String, String> map = new HashMap();
-        map.put("app-version",appVersion);
-        return map;
-    }
+	@GetMapping
+	@RequestMapping("/")
+	public Map<String, String> getStatus() {
+		Map<String, String> map = new HashMap();
+		map.put("app-version", appVersion);
+		map.put("developed-by", "Deepak Naithai");
+		return map;
+	}
 }
