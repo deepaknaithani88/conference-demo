@@ -18,7 +18,7 @@ public class HomeController {
 	public Map<String, String> getStatus() {
 		Map<String, String> map = new HashMap();
 		map.put("app-version", appVersion);
-		map.put("developed-by", "Deepak Naithai");
+		map.put("developed-by", "Deepak Naithani");
 		return map;
 	}
 }
